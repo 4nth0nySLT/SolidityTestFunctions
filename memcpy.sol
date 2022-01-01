@@ -1,4 +1,8 @@
-function memcpy(uint dest, uint src, uint len) private pure {
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.11;
+
+contract Test {
+function memcpy_0(uint dest, uint src, uint len) private pure {
         // Copy word-length chunks while possible
         for(; len >= 32; len -= 32) {
             assembly {
@@ -19,7 +23,7 @@ function memcpy(uint dest, uint src, uint len) private pure {
     }
    
 // From: https://github.com/Arachnid/solidity-stringutils/blob/master/src/strings.sol
-    function memcpy(uint256 dest, uint256 src, uint256 len) private pure {
+    function memcpy_1(uint256 dest, uint256 src, uint256 len) private pure {
         // Copy word-length chunks while possible
         for (; len >= 32; len -= 32) {
             assembly {
@@ -40,7 +44,7 @@ function memcpy(uint dest, uint src, uint len) private pure {
 }
 
 // From: https://github.com/ensdomains/ens-contracts/blob/master/contracts/dnssec-oracle/BytesUtils.sol
-function memcpy(uint dest, uint src, uint len) private pure {
+function memcpy_2(uint dest, uint src, uint len) private pure {
         // Copy word-length chunks while possible
         for (; len >= 32; len -= 32) {
             assembly {
@@ -60,3 +64,4 @@ function memcpy(uint dest, uint src, uint len) private pure {
             }
         }
     }
+}
